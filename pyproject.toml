@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "poetry-generate-plugin"
+version = "0.0.1"
+description = "A plugin for generating new Poetry projects from templates"
+authors = ["Tim OSullivan <44192816+invokermain@users.noreply.github.com>"]
+readme = "README.md"
+packages = [{include = "poetry_generate_plugin"}]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+poetry = { version = "^1.2.0rc2", allow-prereleases = true }
+
+[tool.poetry.plugins."poetry.plugin"]
+demo = "poetry_generate_plugin.plugin:MyPlugin"
+
+
+[tool.poetry.group.dev.dependencies]
+black = "^22.6.0"
+isort = "^5.10.1"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
